@@ -31,3 +31,14 @@ Ans -- You can still open and modify it. If you do:-
 
 4. del .git\index.lock - manually delete the lock file
 """
+
+def name(rank):
+    if rank==1:
+        print("Rajini")
+    elif rank==2:
+        print("Vijay")
+    else:
+        print("Ajith")
+
+
+name(1)
