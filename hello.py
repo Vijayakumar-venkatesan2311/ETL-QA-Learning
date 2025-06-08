@@ -17,5 +17,17 @@ Ans -- You can still open and modify it. If you do:-
 -- Once in staged
 -- Once in unstaged
 
+3. git commit -am "Updated message" 
 
+-- Stage the changes
+-- Commit it in one command
+-- But this only works for tracked files (files already committed before).
+
+3. git config --global core.autocrlf true 
+
+-- This tells Git:
+👉 “I’m on Windows. Please automatically convert line endings as needed.”
+
+
+4. del .git\index.lock - manually delete the lock file
 """
