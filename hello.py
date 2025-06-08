@@ -32,6 +32,21 @@ Ans -- You can still open and modify it. If you do:-
 4. del .git\index.lock - manually delete the lock file
 """
 
+def vote_eligibility(age):
+    if age <= 18:
+        print(f"not eligible for voting his/her age is {age}")
+    else:
+        print((f"eligible for voting his/her age is {age}"))
+
+vote_eligibility(23)
+
+# Step	                                                 Action
+# git stash	                                  Save current work temporarily
+# git checkout main	                          Switch to another branch
+# git checkout feature_changes_Jun_8	      Come back to your feature
+# git stash pop	                              Restore your work
+# git add, git commit, git push	              Save and upload
+
 def name(rank):
     if rank==1:
         print("Rajini")
@@ -42,3 +57,4 @@ def name(rank):
 
 
 name(1)
+
