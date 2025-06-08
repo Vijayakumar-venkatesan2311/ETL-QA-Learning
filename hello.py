@@ -46,3 +46,15 @@ vote_eligibility(23)
 # git checkout feature_changes_Jun_8	      Come back to your feature
 # git stash pop	                              Restore your work
 # git add, git commit, git push	              Save and upload
+
+def name(rank):
+    if rank==1:
+        print("Rajini")
+    elif rank==2:
+        print("Vijay")
+    else:
+        print("Ajith")
+
+
+name(1)
+
