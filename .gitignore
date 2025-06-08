@@ -1,0 +1,6 @@
+# Ignore unwanted folders
+
+venv/
+pandas_assignment/
+CSV_files/
+.ipynb_checkpoints/
