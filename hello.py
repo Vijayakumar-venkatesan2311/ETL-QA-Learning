@@ -30,6 +30,13 @@ Ans -- You can still open and modify it. If you do:-
 
 
 4. del .git\index.lock - manually delete the lock file
+
+5. git stash list - list stashes view a list of all saved stashes
+
+6. git stash apply - Applies most recent stash (or by ID)
+
+7. git stash apply "stash@{0}" - it contain most recent changes (stashed most recent changes)
+
 """
 
 def vote_eligibility(age):
@@ -46,6 +53,20 @@ vote_eligibility(23)
 # git checkout feature_changes_Jun_8	      Come back to your feature
 # git stash pop	                              Restore your work
 # git add, git commit, git push	              Save and upload
+# git stash	                                  Save current uncommitted changes
+# git stash list	                          Show list of stashes with index numbers
+# stash@{0}	                                  The latest stash (most recent)
+# git stash apply stash@{0}	                  Apply latest stash, but keep it in the stash list
+# git stash pop	                              Apply latest stash and remove it from stash list
+# git stash drop stash@{1}	                  Delete a specific stash manually
+# git status                                  check the status
+
+
+# | Action          | Linux/macOS (`bash`) | PowerShell                         |
+# | -------------  | --------------------  | ---------------------------------- |
+# | Create a file | `touch file.txt`      | `New-Item file.txt -ItemType File`  |
+
+
 
 def name(rank):
     if rank==1:
