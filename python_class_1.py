@@ -16,7 +16,8 @@ class Hello:
         print("Hi Gud mrng", name)
 
 greet = Hello()
-greet.printHello("vijay") # need self parameter
+greet.printHello("vijay") # need self parameter - create object (greet) and then call with method (printHello)
+                          # Here object.method
 
 
 # without self
@@ -24,7 +25,7 @@ class Hello:
     def printHello(name):
         print("Hi Gud mrng", name)
 
-Hello.printHello("vijay") # without self it will work
+Hello.printHello("vijay") # without self it will work ( directly call with class.method)
 
 
 # This is a Class (Blueprint)
