@@ -59,6 +59,12 @@ vote_eligibility(23)
 # git stash apply stash@{0}	                  Apply latest stash, but keep it in the stash list
 # git stash pop	                              Apply latest stash and remove it from stash list
 # git stash drop stash@{1}	                  Delete a specific stash manually
+# git status                                  check the status
+
+
+# | Action          | Linux/macOS (`bash`) | PowerShell                         |
+# | -------------  | --------------------  | ---------------------------------- |
+# | Create a file | `touch file.txt`      | `New-Item file.txt -ItemType File`  |
 
 
 
