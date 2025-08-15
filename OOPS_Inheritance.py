@@ -1,124 +1,124 @@
-# # Inheritance - that allows a class (child class) to inherit properties and methods from another class (parent class)
-#
-# # why it is needed -
-# # Avoid code duplication
-# # support polymorphism - same method behaves differently depending on the object
-#
-# class Animal:
-#     def speak(self):
-#         print("Dog speaks")
-#
-# class Dog(Animal):
-#     def bark(self):
-#         print("Dog barks")
-#
-# dog = Dog()
-# dog.speak()
-# dog.bark()
-#
-# # Intermediate example
-#
-# class Animal:
-#     def speak(self):
-#         print("Dog is not speaking")
-#
-# class New_Dog(Animal):
-#     def speak(self):
-#         print("Dog barks instead")
-#
-# new_dog = New_Dog()
-# new_dog.speak()
-#
-#
-# # real project structure using inheritance
-#
-# # Base class - Generic ETL job
-#
-# class ETLJob:
-#     def extract(self):
-#         raise NotImplementedError("Extraction not happened")
-#
-#     def transform(self):
-#         raise NotImplementedError("Transformation not happened")
-#
-#     def load(self):
-#         raise NotImplementedError("Loading not happened")
-#
-#     def run(self):
-#         self.extract()
-#         self.transform()
-#         self.load()
-#
-# # preprocessing job
-#
-# class ExtractToInputJob(ETLJob):
-#     def extract(self):
-#         print("Reading files from input-extract")
-#
-#     def transform(self):
-#         print("Applying preprocessing rules (renaming, flattening, validation)")
-#
-#     def load(self):
-#         print("Saving processed files to input")
-#
-# # Bronze and silver job
-#
-# class InputToBronze(ETLJob):
-#     def extract(self):
-#         print("Reading clean input files from input")
-#
-#     def transform(self):
-#         print("No transformation needed for this step")
-#
-#     def load(self):
-#         print("Loading the raw data to bronze layer")
-#
-# class BronzeToSilver(ETLJob):
-#     def extract(self):
-#         print("Reading data from bronze layer")
-#
-#     def transform(self):
-#         print("Cleaning nulls, joining lookup tables, deriving columns")
-#
-#     def load(self):
-#         print("Writing transformed data to silver layer")
-#
-# def run_job(a):
-#     a.run()
-#
-# # It creates a list of 3 objects job1, job2, job3
-# jobs = [
-#     ExtractToInputJob(),
-#     InputToBronze(),
-#     BronzeToSilver()
-# ]
-#
-# # Run each job one by one
-# for job in jobs:
-#     print(f"\nRunning job: {job.__class__.__name__}")
-#     run_job(job)
-#
-# # job.__class__.__name__ - “Give me the name of the class of this object.”
-#
-# # How iteration happens
-# """
-# step 1:
-# job = ExtractToInputJob()
-# print("Running job: ExtractToInputJob")
-# run_job(job)
-#
-# step 2:
-# def run_job(job):
-#     job.run()
-#
-# step 3:
-# class ExtractToInputJob(ETLJob):
-#     def run(self):   # comes from ETLJob
-#         self.extract()
-#         self.transform()
-#         self.load()
-# """
-#
+# Inheritance - that allows a class (child class) to inherit properties and methods from another class (parent class)
+
+# why it is needed -
+# Avoid code duplication
+# support polymorphism - same method behaves differently depending on the object
+
+class Animal:
+    def speak(self):
+        print("Dog speaks")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+dog = Dog()
+dog.speak()
+dog.bark()
+
+# Intermediate example
+
+class Animal:
+    def speak(self):
+        print("Dog is not speaking")
+
+class New_Dog(Animal):
+    def speak(self):
+        print("Dog barks instead")
+
+new_dog = New_Dog()
+new_dog.speak() # output will be - Dog barks instead
+
+
+# real project structure using inheritance
+
+# Base class - Generic ETL job
+
+class ETLJob:
+    def extract(self):
+        raise NotImplementedError("Extraction not happened")
+
+    def transform(self):
+        raise NotImplementedError("Transformation not happened")
+
+    def load(self):
+        raise NotImplementedError("Loading not happened")
+
+    def run(self):
+        self.extract()
+        self.transform()
+        self.load()
+
+# preprocessing job
+
+class ExtractToInputJob(ETLJob):
+    def extract(self):
+        print("Reading files from input-extract")
+
+    def transform(self):
+        print("Applying preprocessing rules (renaming, flattening, validation)")
+
+    def load(self):
+        print("Saving processed files to input")
+
+# Bronze and silver job
+
+class InputToBronze(ETLJob):
+    def extract(self):
+        print("Reading clean input files from input")
+
+    def transform(self):
+        print("No transformation needed for this step")
+
+    def load(self):
+        print("Loading the raw data to bronze layer")
+
+class BronzeToSilver(ETLJob):
+    def extract(self):
+        print("Reading data from bronze layer")
+
+    def transform(self):
+        print("Cleaning nulls, joining lookup tables, deriving columns")
+
+    def load(self):
+        print("Writing transformed data to silver layer")
+
+def run_job(a):
+    a.run()
+
+# It creates a list of 3 objects job1, job2, job3
+jobs = [
+    ExtractToInputJob(),
+    InputToBronze(),
+    BronzeToSilver()
+]
+
+# Run each job one by one
+for job in jobs:
+    print(f"\nRunning job: {job.__class__.__name__}")
+    run_job(job)
+
+# job.__class__.__name__ - “Give me the name of the class of this object.”
+
+# How iteration happens
+"""
+step 1:
+job = ExtractToInputJob()
+print("Running job: ExtractToInputJob")
+run_job(job)
+
+step 2:
+def run_job(job):
+    job.run()
+
+step 3:
+class ExtractToInputJob(ETLJob):
+    def run(self):   # comes from ETLJob
+        self.extract()
+        self.transform()
+        self.load()
+"""
+
 
 # New Example:
 

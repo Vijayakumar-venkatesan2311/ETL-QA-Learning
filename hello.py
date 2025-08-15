@@ -75,7 +75,5 @@ def name(rank):
         print("Vijay")
     else:
         print("Ajith")
-
-
 name(1)
 
